@@ -1,0 +1,9 @@
+{
+	"name": "foxland/latest-posts",
+	"category": "layout",
+	"attributes": {
+		"align": {
+			"type": "string"
+		}
+	}
+}

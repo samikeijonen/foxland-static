@@ -1,0 +1,10 @@
+{
+	"name": "fox-blocks/cover-group",
+	"category": "layout",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	}
+}

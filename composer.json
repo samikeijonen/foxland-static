@@ -1,0 +1,23 @@
+{
+  "name": "10up/foxland-static",
+  "type": "wordpress-theme",
+  "description" : "Simple theme for static front-end sites.",
+  "authors": [
+    {
+      "name": "Sami Keijonen",
+      "email": "sami.keijonen@foxnet.fi"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "samikeijonen/phpcs-composer": "dev-master"
+  },
+  "scripts": {
+    "lint": "phpcs .",
+    "lint-fix": "phpcbf ."
+  }
+}
