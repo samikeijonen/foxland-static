@@ -103,6 +103,7 @@ final class Plugin {
 	private function includes() {
 		// Include block PHP files.
 		require_once $this->dir . 'src/latest-posts/index.php';
+		require_once $this->dir . 'src/contact/index.php';
 
 		// Include other PHP files.
 		require_once $this->dir . 'inc/post-types.php';

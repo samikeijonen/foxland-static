@@ -7,9 +7,6 @@
 
 namespace FoxlandPlugin\Blocks;
 
-use function Foxland\get_svg;
-use function Hybrid\View\display;
-
 /**
  * Renders the `foxland/latest-posts` block on server.
  *

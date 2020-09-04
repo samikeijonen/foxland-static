@@ -1,0 +1,9 @@
+{
+	"name": "foxland/contact",
+	"category": "layout",
+	"attributes": {
+		"align": {
+			"type": "string"
+		}
+	}
+}
