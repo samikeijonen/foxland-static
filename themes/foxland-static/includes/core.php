@@ -18,6 +18,9 @@ function setup() {
 	};
 
 	add_action( 'after_setup_theme', $n( 'theme_setup' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts_styles' ) );
+	add_action( 'enqueue_block_editor_assets', $n( 'editor_scripts_styles' ) );
+	add_action( 'enqueue_block_assets', $n( 'block_scripts_styles' ) );
 }
 
 /**
@@ -102,4 +105,41 @@ function theme_setup() {
 
 		// Set the `post-thumbnail` size.
 		set_post_thumbnail_size( 972, 600, true );
+}
+
+/**
+ * Enqueue scripts and styles for front-end.
+ *
+ * @return void
+ */
+function scripts_styles() {
+	// Dequeue Core block styles.
+	wp_dequeue_style( 'wp-block-library' );
+}
+
+/**
+ * Enqueue scripts and styles for editor.
+ *
+ * @return void
+ */
+function editor_scripts_styles() {
+	// Editor styles.
+	wp_enqueue_style( 'editor-style', 'https://foxland.fi/assets/editor.css', null, null );
+
+}
+
+/**
+ * Enqueue scripts and styles for front-end and editor.
+ *
+ * @return void
+ */
+function block_scripts_styles() {
+	// Overwrite Core block styles with empty styles.
+	wp_deregister_style( 'wp-block-library' );
+	wp_register_style( 'wp-block-library', '' );
+
+	// Overwrite Core theme styles with empty styles.
+	wp_deregister_style( 'wp-block-library-theme' );
+	wp_register_style( 'wp-block-library-theme', '' );
+
 }
