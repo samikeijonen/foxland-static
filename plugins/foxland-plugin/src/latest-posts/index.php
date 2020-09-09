@@ -52,7 +52,7 @@ function render_latest_posts( $attributes ) {
 				if ( 0 === $iterator && has_post_thumbnail() ) :
 					?>
 					<figure class="entry__thumbnail">
-						<a class="entry__thumbnail-link" href="/<?php echo esc_attr(basename( get_permalink() ) ); ?>" aria-hidden="true" tabindex="-1">
+						<a class="entry__thumbnail-link" href="/<?php echo esc_attr( basename( get_permalink() ) ); ?>" aria-hidden="true" tabindex="-1">
 							<?php echo wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'post-thumbnail' ); ?>
 						</a>
 					</figure>
