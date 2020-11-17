@@ -123,8 +123,14 @@ function scripts_styles() {
  * @return void
  */
 function editor_scripts_styles() {
+	if ( wp_get_environment_type() === 'local' ) {
+		$editor_url = 'http://localhost:8080/assets/editor.css';
+	} else {
+		$editor_url = 'https://foxland.fi/assets/editor.css';
+	}
+
 	// Editor styles.
-	wp_enqueue_style( 'editor-style', 'https://foxland.fi/assets/editor.css', null, null );
+	wp_enqueue_style( 'editor-style', esc_url( $editor_url ), null, null );
 
 }
 
