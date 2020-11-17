@@ -5,7 +5,7 @@
  * @package FoxlandStatic\Options
  */
 
-//namespace FoxlandStatic\Options;
+namespace FoxlandStatic\Options;
 
 /**
  * @internal never define functions inside callbacks.
@@ -26,7 +26,8 @@ function foxland_settings_init() {
     // Register a new section in the "foxland" page.
     add_settings_section(
         'foxland_section_developers',
-        esc_html__( 'Settings for Foxland site.', 'foxland' ), 'foxland_section_developers_callback',
+		esc_html__( 'Settings for Foxland site.', 'foxland' ),
+		__NAMESPACE__ . '\foxland_section_developers_callback',
         'foxland'
     );
 
@@ -35,7 +36,7 @@ function foxland_settings_init() {
         'foxland_netlify_url', // As of WP 4.6 this value is used only internally.
         // Use $args' label_for to populate the id inside the callback.
         esc_html__( 'Netlify API URL', 'foxland' ),
-        'foxland_field_netlify_cb',
+        __NAMESPACE__ . '\foxland_field_netlify_cb',
         'foxland',
         'foxland_section_developers',
         [
@@ -47,7 +48,7 @@ function foxland_settings_init() {
 /**
  * Register our foxland_settings_init to the admin_init action hook.
  */
-add_action( 'admin_init', 'foxland_settings_init' );
+add_action( 'admin_init', __NAMESPACE__ . '\foxland_settings_init' );
 
 
 /**
@@ -101,13 +102,13 @@ function foxland_options_page() {
         esc_html__( 'Foxland Options', 'foxland' ),
         'manage_options',
         'foxland',
-        'foxland_options_page_html'
+        __NAMESPACE__ . '\foxland_options_page_html'
     );
 }
 /**
  * Register our foxland_options_page to the admin_menu action hook.
  */
-add_action( 'admin_menu', 'foxland_options_page' );
+add_action( 'admin_menu', __NAMESPACE__ . '\foxland_options_page' );
 
 
 /**
