@@ -2,10 +2,10 @@
 /**
  *  Options.
  *
- * @package FoxlandStatic\Options
+ * @package FoxlandPlugin\Options
  */
 
-namespace FoxlandStatic\Options;
+namespace FoxlandPlugin\Options;
 
 /**
  * @internal never define functions inside callbacks.
@@ -15,7 +15,7 @@ namespace FoxlandStatic\Options;
 /**
  * Custom option and settings.
  */
-function foxland_settings_init() {
+function settings_init() {
 	// Register a new setting for "foxland" page.
 	$args = [
     	'sanitize_callback' => 'esc_url_raw',
@@ -46,9 +46,9 @@ function foxland_settings_init() {
     );
 }
 /**
- * Register our foxland_settings_init to the admin_init action hook.
+ * Register our settings_init to the admin_init action hook.
  */
-add_action( 'admin_init', __NAMESPACE__ . '\foxland_settings_init' );
+add_action( 'admin_init', __NAMESPACE__ . '\settings_init' );
 
 
 /**
@@ -95,7 +95,7 @@ function foxland_field_netlify_cb( $args ) {
 /**
  * Add the top level menu page.
  */
-function foxland_options_page() {
+function options_page() {
     add_submenu_page(
 		'options-general.php',
         esc_html__( 'Foxland Options', 'foxland' ),
@@ -106,9 +106,9 @@ function foxland_options_page() {
     );
 }
 /**
- * Register our foxland_options_page to the admin_menu action hook.
+ * Register our options_page to the admin_menu action hook.
  */
-add_action( 'admin_menu', __NAMESPACE__ . '\foxland_options_page' );
+add_action( 'admin_menu', __NAMESPACE__ . '\options_page' );
 
 
 /**

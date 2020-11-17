@@ -107,6 +107,7 @@ final class Plugin {
 
 		// Include other PHP files.
 		require_once $this->dir . 'inc/post-types.php';
+		require_once $this->dir . 'inc/options.php';
 	}
 
 	/**
