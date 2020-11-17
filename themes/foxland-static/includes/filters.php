@@ -44,3 +44,25 @@ function render_block( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block', __NAMESPACE__ . '\render_block', 10, 2 );
+
+/**
+ * Fire a Netlify build when post is transitioned to 'publish'.
+ *
+ * @param string  $new_status New post status.
+ * @param string  $old_status Old post status.
+ * @param \WP_Post $post      Post object.
+ */
+function deploy_live( $new_status, $old_status, $post ) {
+	$setting = get_option( 'foxland_options' );
+	$netlify_url = $setting['foxland_netlify_url'];
+
+	if ( 'publish' === $new_status && 'publish' !== $old_status && ! empty( $netlify_url ) ) {
+		wp_remote_post(
+			esc_url( $netlify_url ),
+			[
+				'body' => []
+			],
+		);
+	}
+}
+add_action( 'transition_post_status', __NAMESPACE__ . '\deploy_live', 10, 3 );

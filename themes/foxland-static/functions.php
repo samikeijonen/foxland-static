@@ -12,6 +12,7 @@ define( 'FOXLAND_STATIC_INC', FOXLAND_STATIC_PATH . 'includes/' );
 
 require_once FOXLAND_STATIC_INC . 'core.php';
 require_once FOXLAND_STATIC_INC . 'filters.php';
+require_once FOXLAND_STATIC_INC . 'options.php';
 
 // Run the setup functions.
 FoxlandStatic\Core\setup();
