@@ -13,7 +13,7 @@ namespace FoxlandPlugin\Options;
 function settings_init() {
 	// Register a new setting for "foxland" page.
 	$args = [
-		'sanitize_callback' => 'esc_url_raw',
+		'sanitize_callback' => __NAMESPACE__ . '\sanitize',
 	];
 
 	register_setting( 'foxland', 'foxland_options' );
@@ -135,4 +135,17 @@ function foxland_options_page_html() {
 		</form>
 	</div>
 	<?php
+}
+
+/**
+ * Sanitize user input.
+ *
+ * @param array $input User input.
+ */
+function sanitize( $input ) {
+	if ( ! empty( $input['foxland_netlify_url'] ) ) {
+		$input['foxland_netlify_url'] = esc_url_raw( $input['foxland_netlify_url'] );
+	}
+
+	return $input;
 }
