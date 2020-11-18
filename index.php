@@ -1,2 +1,8 @@
 <?php
-// Silence is golden.
+/**
+ * Index file.
+ *
+ * @package Foxland
+ */
+
+// Silence.
