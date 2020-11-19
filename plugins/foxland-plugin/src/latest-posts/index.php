@@ -61,7 +61,7 @@ function render_latest_posts( $attributes ) {
 				<header class="entry__header">
 					<h2 class="entry__title<?php echo 0 !== $iterator ? ' h3' : ''; ?>"><a class="decoration-none h-decoration-underline color-dark" href="/<?php echo esc_attr( basename( get_permalink() ) ); ?>"><?php the_title(); ?></a></h2>
 
-					<div class="entry__byline fw-500">
+					<div class="entry__byline fw-500 mt-2">
 						<?php
 							echo sprintf(
 								'<time class="entry__published" datetime="%s">%s</time>',
