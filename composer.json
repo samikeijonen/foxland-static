@@ -14,7 +14,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require-dev": {
-    "samikeijonen/phpcs-composer": "dev-master"
+    "samikeijonen/phpcs-composer": "dev-main"
   },
   "scripts": {
     "lint": "phpcs .",
