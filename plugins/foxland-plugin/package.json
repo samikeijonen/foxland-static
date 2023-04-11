@@ -17,7 +17,7 @@
   "author": "Sami Keijonen",
   "license": "MIT",
   "devDependencies": {
-    "@wordpress/scripts": "12.2.0"
+    "@wordpress/scripts": "26.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.6"

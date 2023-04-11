@@ -1,4 +1,5 @@
 {
+  "apiVersion": 2,
 	"name": "foxland/contact",
 	"category": "layout",
 	"attributes": {
